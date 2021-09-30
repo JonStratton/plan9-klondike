@@ -1,10 +1,10 @@
 
 </$objtype/mkfile
 
-#BIN=/$objtype/bin/games
-#CARDPATH=/sys/lib/klondike/cards
-BIN=/usr/sdf/bin
-CARDPATH=/usr/sdf/lib/klondike/cards
+BIN=/$objtype/bin/games
+CARDPATH=/sys/lib/klondike/cards
+#BIN=/usr/sdf/bin
+#CARDPATH=/usr/sdf/lib/klondike/cards
 #BIN=./
 #CARDPATH=cards
 
