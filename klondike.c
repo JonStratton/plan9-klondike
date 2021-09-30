@@ -202,8 +202,9 @@ Start:
 				drag();
 			break;
 		case 2:
-			putinfoundation(mouse.xy);
 			waitbutrelease(2);
+			putinfoundation(mouse.xy);
+			putintableau(mouse.xy);
 			break;
 		case 4:
 			switch(emenuhit(3, &mouse, &menu)){

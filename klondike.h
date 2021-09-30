@@ -59,6 +59,7 @@ int canturn(Cardstack*);
 int candrop(Card*, Cardstack*);
 int validmove(Card*, Cardstack*);
 void putinfoundation(Point);
+void putintableau(Point);
 
 /*draw.c*/
 void drawtable(Image*);
