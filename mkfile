@@ -1,6 +1,14 @@
-</$objtype/mkfile
-BIN=/$objtype/bin/games
 
+</$objtype/mkfile
+
+BIN=/$objtype/bin/games
+CARDPATH=/sys/lib/klondike/cards
+#BIN=/usr/sdf/bin
+#CARDPATH=/usr/sdf/lib/klondike/cards
+#BIN=./
+#CARDPATH=cards
+
+CFLAGS= -DCARDPATH="$CARDPATH"
 TARG=klondike
 OFILES=\
 	card.$O\
@@ -13,8 +21,12 @@ UPDATE=\
 	mkfile\
 	${OFILES:%.$O=%.c}\
 
-</sys/src/cmd/mkone
+build: $O.out
+	echo build
 
-syms:V:
-	8c -a klondike.c > syms
-	8c -aa klondike.c >> syms
+install:
+	mkdir -p $CARDPATH
+	cp cards/* $CARDPATH
+	cp $O.out $BIN/$TARG
+
+</sys/src/cmd/mkone
