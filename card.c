@@ -92,6 +92,31 @@ putinfoundation(Point xy)
 	drawtable(screen);
 }
 
+void
+putintableau(Point xy)
+{
+	int i;
+	Card *c;
+	Cardstack *src, *dst;
+
+	src = chosenstack(xy);
+	if(src == nil || src == stock
+	|| movpilesize(xy, src) == 0
+	|| !top(src)->up)
+		return;
+	c = pop(src);
+	dst = src;
+	for(i = 0; i < nelem(tableau); i++){
+		dst = tableau[i];
+		if(src != dst)
+			if(validmove(c, dst))
+				break;
+			dst = src;
+	}
+	push(dst, c);
+	drawtable(screen);
+}
+
 int
 canturn(Cardstack *cs)
 {

@@ -204,6 +204,7 @@ Start:
 			break;
 		case 2:
 			putinfoundation(mouse.xy);
+			putintableau(mouse.xy);
 			waitbutrelease(2);
 			break;
 		case 4:

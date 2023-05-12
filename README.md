@@ -18,3 +18,4 @@ mk install
 ### Changes
 - Improvements to build on a modern 9front system.
 - Card location is configurable in the mkfile.
+- Middle click to send a card to the foundation, or tableau.
