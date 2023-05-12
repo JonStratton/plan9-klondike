@@ -4,10 +4,10 @@
 #include "klondike.h"
 
 char *suitpathfmt[] = {
-	"/sys/games/lib/klondike/cards/c%d.bit",
-	"/sys/games/lib/klondike/cards/d%d.bit",
-	"/sys/games/lib/klondike/cards/s%d.bit",
-	"/sys/games/lib/klondike/cards/h%d.bit"
+	"%s/c%d.bit",
+	"%s/d%d.bit",
+	"%s/s%d.bit",
+	"%s/h%d.bit"
 };
 
 Image*
@@ -16,7 +16,7 @@ opencard(int suit, int rank)
 	char *s;
 	Image *img;
 
-	s = smprint(suitpathfmt[suit], rank);
+	s = smprint(suitpathfmt[suit], CARDPATH, rank);
 	if(s == nil)
 		sysfatal("smprint: %r");
 	img = openimage(s);

@@ -60,7 +60,7 @@ gameinit(void)
 {
 	int i;
 
-	cardback = openimage("/sys/games/lib/klondike/cards/back.bit");
+	cardback = openimage(smprint("%s/back.bit", CARDPATH));
 	stock = stackinit(0, 0, 0, 52);
 	waste = stackinit(0, 0, 0, 52);
 	for(i = 0; i < nelem(foundation); i++)
